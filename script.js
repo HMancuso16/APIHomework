@@ -1,12 +1,9 @@
-// Assignment Code
-
-// Assign button to generate password
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
+// Write password to the password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -16,7 +13,7 @@ function writePassword() {
 
 function generatePassword() {
 
-  //Initialize while loop. User must have proper password length to exit loop
+  //Initialize while loop. User must have at least 8 charcters to exit loop
   var lengthPassword;
   var password = " ";
   while ( isNaN(parseInt(lengthPassword)) || lengthPassword < 8 || lengthPassword > 124) {
@@ -30,13 +27,13 @@ function generatePassword() {
  }
 
   }
-  // Confirm prompts for each password "condition"
+  // Confirm prompts for each password 
   wantsSpecial = confirm("Please click 'OK' if you wish to include SPECIAL characters.");
   wantsNumeric = confirm("Please click 'OK' if you wish to include NUMERIC characters.");
   wantsLower = confirm("Please click 'OK' if you wish to include LOWERCASE characters.");
   wantsUpper = confirm("Please click 'OK' if you wish to include UPPERCASE characters.");
 
-  // If statement to redirect user to beginning if they confirm no characters
+  // If statement redirects user to beginning if they confirm no characters
   if (!wantsLower && !wantsNumeric && !wantsSpecial && !wantsUpper) {
     alert('Error: No character type selected. Please try again.');
     lengthPassword = 0;
